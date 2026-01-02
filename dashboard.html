@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gentil - Portfolio Dashboard</title>
+    <meta name="description" content="Gentil's professional portfolio dashboard showcasing analytics and project management">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#10B981",
+                        secondary: "#059669",
+                        accent: "#F59E0B",
+                        dark: "#1F2937",
+                        light: "#F9FAFB"
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50 font-sans">
+    <!-- Dashboard Layout -->
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-lg">
+            <div class="p-6">
+                <div class="flex items-center space-x-3 mb-8">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">G</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">Gentil</h1>
+                        <p class="text-sm text-gray-500">Portfolio Dashboard</p>
+                    </div>
+                </div>
+                
+                <nav class="space-y-2">
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-primary text-white">
+                        <i class="fas fa-chart-line w-5"></i>
+                        <span>Overview</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-briefcase w-5"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-chart-bar w-5"></i>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-users w-5"></i>
+                        <span>Clients</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-cog w-5"></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+            <!-- Header -->
+            <header class="bg-white shadow-sm border-b">
+                <div class="flex justify-between items-center px-8 py-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Dashboard Overview</h2>
+                        <p class="text-gray-600">Welcome back, Gentil</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <section class="p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-500 text-sm">Total Projects</p>
+                                <h3 class="text-3xl font-bold text-gray-800 mt-2">24</h3>
+                                <p class="text-green-600 text-sm mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i>
+                                    12% from last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-briefcase text-primary text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-500 text-sm">Active Clients</p>
+                                <h3 class="text-3xl font-bold text-gray-800 mt-2">8</h3>
+                                <p class="text-green-600 text-sm mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i>
+                                    5% from last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-users text-blue-500 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-500 text-sm">Revenue</p>
+                                <h3 class="text-3xl font-bold text-gray-800 mt-2">$42.5K</h3>
+                                <p class="text-green-600 text-sm mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i>
+                                    8% from last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-dollar-sign text-yellow-500 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-500 text-sm">Completion Rate</p>
+                                <h3 class="text-3xl font-bold text-gray-800 mt-2">92%</h3>
+                                <p class="text-green-600 text-sm mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i>
+                                    3% from last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-chart-line text-purple-500 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Projects -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Projects Table -->
+                    <div class="bg-white rounded-xl shadow-sm border">
+                        <div class="p-6 border-b">
+                            <h3 class="text-xl font-semibold text-gray-800">Recent Projects</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-colors">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-palette text-blue-500"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">E-commerce Redesign</h4>
+                                            <p class="text-gray-500 text-sm">Web Design</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Completed</span>
+                                        <p class="text-gray-500 text-sm mt-1">2 days ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-colors">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-mobile-alt text-purple-500"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Mobile Banking App</h4>
+                                            <p class="text-gray-500 text-sm">UI/UX Design</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">In Progress</span>
+                                        <p class="text-gray-500 text-sm mt-1">Due in 5 days</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-colors">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-globe text-green-500"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Corporate Website</h4>
+                                            <p class="text-gray-500 text-sm">Web Development</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Review</span>
+                                        <p class="text-gray-500 text-sm mt-1">Due tomorrow</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="w-full mt-6 py-3 text-primary font-medium hover:bg-gray-50 rounded-lg transition-colors">
+                                View All Projects
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Activity Feed -->
+                    <div class="bg-white rounded-xl shadow-sm border">
+                        <div class="p-6 border-b">
+                            <h3 class="text-xl font-semibold text-gray-800">Recent Activity</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-check text-green-500"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-800">
+                                            <span class="font-semibold">E-commerce Redesign</span> project completed
+                                        </p>
+                                        <p class="text-gray-500 text-sm mt-1">2 hours ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-comment text-blue-500"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-800">
+                                            New message from <span class="font-semibold">TechCorp Inc.</span>
+                                        </p>
+                                        <p class="text-gray-500 text-sm mt-1">5 hours ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-upload text-yellow-500"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-800">
+                                            Updated project files for <span class="font-semibold">Mobile Banking App</span>
+                                        </p>
+                                        <p class="text-gray-500 text-sm mt-1">Yesterday</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-user-plus text-purple-500"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-800">
+                                            New client <span class="font-semibold">StartupXYZ</span> added
+                                        </p>
+                                        <p class="text-gray-500 text-sm mt-1">2 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Metrics -->
+                <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h4 class="font-semibold text-gray-800 mb-4">Project Completion</h4>
+                        <div class="w-full h-4 bg-gray-200 rounded-full">
+                            <div class="h-4 bg-primary rounded-full" style="width: 92%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mt-2">
+                            <span>Completed</span>
+                            <span>92%</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h4 class="font-semibold text-gray-800 mb-4">Client Satisfaction</h4>
+                        <div class="w-full h-4 bg-gray-200 rounded-full">
+                            <div class="h-4 bg-green-500 rounded-full" style="width: 88%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mt-2">
+                            <span>Satisfied</span>
+                            <span>88%</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border">
+                        <h4 class="font-semibold text-gray-800 mb-4">On-Time Delivery</h4>
+                        <div class="w-full h-4 bg-gray-200 rounded-full">
+                            <div class="h-4 bg-yellow-500 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mt-2">
+                            <span>On Time</span>
+                            <span>95%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Dashboard data
+        const dashboardStats = [
+            { "id": 1, "title": "Total Projects", "value": "24", "change": "12", "icon": "briefcase", "color": "green" },
+            { "id": 2, "title": "Active Clients", "value": "8", "change": "5", "icon": "users", "color": "blue" },
+            { "id": 3, "title": "Revenue", "value": "$42.5K", "change": "8", "icon": "dollar-sign", "color": "yellow" },
+            { "id": 4, "title": "Completion Rate", "value": "92%", "change": "3", "icon": "chart-line", "color": "purple" }
+        ];
+
+        const recentProjects = [
+            { 
+                "id": 1, 
+                "name": "E-commerce Redesign", 
+                "category": "Web Design", 
+                "status": "Completed", 
+                "statusColor": "green",
+                "time": "2 days ago",
+                "icon": "palette"
+            },
+            { 
+                "id": 2, 
+                "name": "Mobile Banking App", 
+                "category": "UI/UX Design", 
+                "status": "In Progress", 
+                "statusColor": "yellow",
+                "time": "Due in 5 days",
+                "icon": "mobile-alt"
+            },
+            { 
+                "id": 3, 
+                "name": "Corporate Website", 
+                "category": "Web Development", 
+                "status": "Review", 
+                "statusColor": "blue",
+                "time": "Due tomorrow",
+                "icon": "globe"
+            }
+        ];
+
+        const recentActivities = [
+            {
+                "id": 1,
+                "type": "completion",
+                "message": "E-commerce Redesign project completed",
+                "time": "2 hours ago",
+                "icon": "check",
+                "color": "green"
+            },
+            {
+                "id": 2,
+                "type": "message",
+                "message": "New message from TechCorp Inc.",
+                "time": "5 hours ago",
+                "icon": "comment",
+                "color": "blue"
+            },
+            {
+                "id": 3,
+                "type": "update",
+                "message": "Updated project files for Mobile Banking App",
+                "time": "Yesterday",
+                "icon": "upload",
+                "color": "yellow"
+            },
+            {
+                "id": 4,
+                "type": "client",
+                "message": "New client StartupXYZ added",
+                "time": "2 days ago",
+                "icon": "user-plus",
+                "color": "purple"
+            }
+        ];
+
+        // Sidebar navigation
+        document.querySelectorAll('aside nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('aside nav a').forEach(item => {
+                    item.classList.remove('bg-primary', 'text-white');
+                    item.classList.add('text-gray-600', 'hover:bg-gray-100');
+                });
+                this.classList.add('bg-primary', 'text-white');
+                this.classList.remove('text-gray-600', 'hover:bg-gray-100');
+            });
+        });
+
+        // Search functionality
+        document.querySelector('input[type="text"]').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            console.log("Searching for:", searchTerm);
+        });
+    </script>
+</body>
+</html>
